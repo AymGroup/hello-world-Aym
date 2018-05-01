@@ -1,3 +1,7 @@
-# hello-world-Aym
-Une petite description de mon projet...
-Je suis Aymen, j'ai 21 ans blablabla...
+# Project Struts2 & Hibernate 
+Project description :
+JDK : 1.8
+Project type : Dynamic Web Project
+Server runtime : TomCat 8.5
+Models : User | Profil | Functionality
+
