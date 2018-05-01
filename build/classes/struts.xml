@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+ <struts>
+ 	<!-- <include file="presentation/Profil.xml"/> -->
+
+ 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+ 	<constant name="struts.devMode" value="true" />
+ 	
+ 	<include file="ressource/struts_fonct.xml"></include>
+ 	
+ 	<!-- Profil NameSpace -->
+ 	<package name="default" namespace="/" extends="struts-default">
+ 		<action name="redirectP" class="presentation.ProfilAction" method="redirect" >
+ 			<result name="success">/pages/index.jsp</result>
+ 		</action>
+ 	
+ 	
+ 		<action name="add" class="presentation.ProfilAction" method="ajouter">
+			<result name="success">/pages/index.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<action name="delete" class="presentation.ProfilAction" method="delete">
+			<result name="success">/pages/listProfil.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<action name="edit" class="presentation.ProfilAction" method="edit">
+			<result name="success">/pages/updateProfil.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<action name="update" class="presentation.ProfilAction" method="modifier">
+			<result name="success">/pages/index.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<!-- Search by  -->
+		<action name="search" class="presentation.ProfilAction" method="findBy">
+			<result name="success">/pages/listProfil.jsp</result>
+		</action>
+		
+		<action name="listAll" class="presentation.ProfilAction" method="listAll">
+			<result name="success">/pages/listProfil.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<action name="listExport" class="presentation.ProfilAction" method="listExport">
+			<result name="success">/pages/listProfilExport.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		
+		<!-- Redirect to index -->
+		<action name="redirect" class="presentation.ProfilAction" method="redirect" >
+			<result name="success">/pages/index.jsp</result>
+		</action>
+ 	</package>
+ 	
+ 	<!-- User NameSpace -->
+ 	<package name="user" namespace="/user" extends="struts-default">
+		
+ 		<action name="add" class="presentation.UserAction" method="ajouterUser">
+ 			<result name="success">/pages/user/addUser.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 		</action>
+ 		
+ 		<action name="delete" class="presentation.UserAction" method="deleteUser">
+ 			<result name="SUCCESS">/pages/user/listEditUser.jsp</result>
+ 			<result name="ERROR">/pages/error.jsp</result>
+ 		</action>
+ 		
+ 		<!-- Redirect to List editing users -->
+ 		<action name="editerUser" class="presentation.UserAction" method="lister">
+ 			<result name="success">/pages/user/listEditUser.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 		</action>
+ 		
+ 		<!-- Update Form -->
+ 		<action name="getUser" class="presentation.UserAction" method="editUser">
+			<result name="success">/pages/user/updateUser.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<!-- Update Action -->
+		<action name="updateUser" class="presentation.UserAction" method="modifierUser">
+			<result name="success">/pages/user/listEditUser.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+		<!-- SearchBy Action -->
+		<action name="searchUser" class="presentation.UserAction" method="searchUser">
+			<result name="success">/pages/user/listEditUser.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+		
+ 		<action name="listerUser" class="presentation.UserAction" method="lister">
+			<result name="success">/pages/user/listUser.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+		</action>
+ 		
+ 		<!-- Redirect to User form -->
+ 		<action name="redirectU" class="presentation.UserAction" method="redirectUser">
+ 			<result name="success">/pages/user/addUser.jsp</result>
+ 		</action>
+ 	
+ 	</package>
+ </struts>

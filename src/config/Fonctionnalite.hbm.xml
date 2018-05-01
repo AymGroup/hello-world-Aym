@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.entities.Fonctionnalite" table="FONCTIONS">
+		<id name="id" column="ID_FONCTION" type="java.lang.Long">
+			<generator class="identity" />
+		</id>
+		<property name="libelle" column="LIBELLE" type="string" />
+		<property name="description" column="DESCRIPTION" type="string" />
+		
+		<!-- Mapping for list profil : many-to-many -->
+		<set name="profils" cascade="all" lazy="false" table="PROFILS_FCTS">
+			<key column="ID_FCT"/>
+			<many-to-many column="ID_PROFIL" class="metier.entities.Profil"/>
+		</set>
+	</class>
+</hibernate-mapping>

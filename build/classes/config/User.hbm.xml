@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.entities.User" table="USERS">
+		<id name="id" column="ID_USER" type="java.lang.Long">
+			<generator class="identity" />
+		</id>
+		<property name="login" column="LOGIN" type="string" />
+		<property name="password" column="PASSWORD" type="string" />
+		<many-to-one name="profil" class="metier.entities.Profil" cascade="delete" lazy="false" column="ID_PROFIL"/>
+	</class>
+</hibernate-mapping>

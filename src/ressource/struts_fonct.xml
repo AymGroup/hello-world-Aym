@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<package name="fonct" namespace="/fonct" extends="struts-default">
+	
+	<action name="addFonct" class="presentation.FonctAction" method="ajouterFonct">
+ 			<result name="success">/pages/fonct/addFonct.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	<action name="getFonct" class="presentation.FonctAction" method="getFonct">
+ 			<result name="success">/pages/fonct/affectFonct.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	<action name="listerFonct" class="presentation.FonctAction" method="listerFonct">
+ 			<result name="success">/pages/fonct/listEditFonct.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	<!-- Affect Profil To Functionality -->
+ 	<action name="setFonctAffect" class="presentation.FonctAction" method="setFonctAffect">
+ 			<result name="success">/pages/fonct/listEditFonct.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	<!-- Delete Functionality -->
+ 	<action name="deleteFonct" class="presentation.FonctAction" method="deleteFonct">
+ 			<result name="success">/pages/fonct/listEditFonct.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	<!-- Edit Functionality Form -->
+ 	<action name="editFonct" class="presentation.FonctAction" method="editFonct">
+ 			<result name="success">/pages/fonct/editFonct.jsp</result>
+ 	</action>
+ 	
+ 	<!-- Update Functionality Action -->
+ 	<action name="updateFonct" class="presentation.FonctAction" method="updateFonct">
+ 			<result name="success">/pages/fonct/listEditFonct.jsp</result>
+ 			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	<!-- Search Functionality Action -->
+ 	<action name="searchFonct" class="presentation.FonctAction" method="searchFonct">
+ 			<result name="success">/pages/fonct/listEditFonct.jsp</result>
+ 			<result name="error">/pages/error.jsp</result>
+ 	</action>
+ 	
+ 	
+ 	<!-- Redirect Actions -->
+ 	<action name="redirectF" class="presentation.FonctAction" method="redirectFonct">
+ 			<result name="success">/pages/fonct/addFonct.jsp</result>
+ 	</action>
+ 	
+ 	 <action name="listerExport" class="presentation.FonctAction" method="listerExport">
+ 			<result name="success">/pages/fonct/listEx.jsp</result>
+ 	</action>
+ 	
+	
+</package>
+
+</struts>

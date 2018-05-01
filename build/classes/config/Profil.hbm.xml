@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.entities.Profil" table="PROFILS">
+		<id name="id" column="ID_PROFIL" type="java.lang.Long">
+			<generator class="identity" />
+		</id>
+		<property name="libelle" column="LIBELLE" type="string" />
+		<property name="description" column="DESCRIPTION" type="string" />
+		
+		<!-- Mapping liste des users -->
+		<!--  
+		<set name="su" cascade="all" lazy="false">
+			<key column="ID_PROFIL"/>
+			<one-to-many class="metier.entities.User"/>
+		</set>-->
+		
+		<!--  
+		<set name="fcts" cascade="all" lazy="false" table="PROFIL_FCTS">
+			<key column="ID_PROFIL"/>
+			<many-to-many class="metier.entities.Fonctionnalite" column="ID_FCT"/>
+		</set>-->
+		
+		<!-- <one-to-one name="fonction" foreign-key="PROFIL_FONCTION" class="metier.entities.Fonctionnalite" cascade="all" lazy="false"/> -->
+	</class>
+</hibernate-mapping>
